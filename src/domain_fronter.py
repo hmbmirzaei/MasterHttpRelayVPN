@@ -20,6 +20,11 @@ import time
 from dataclasses import dataclass
 from urllib.parse import urlparse
 
+try:
+    import certifi
+except Exception:  # optional dependency fallback
+    certifi = None
+
 import codec
 from constants import (
     BATCH_MAX,
